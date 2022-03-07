@@ -1,0 +1,2 @@
+semana 0 = 10.0
+semana 1 = -5.0

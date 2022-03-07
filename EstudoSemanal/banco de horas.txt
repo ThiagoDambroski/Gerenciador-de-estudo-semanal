@@ -1,0 +1,7 @@
+segunda = placeholder1
+terça = placeholder2
+quarta = placeholder3
+quinta = placeholder4
+sexta = placeholder5
+sab = placeholder6
+domingo = placeholder7 
