@@ -1,6 +1,5 @@
 from defs import *
 pag = ("banco de horas.txt","r")
-horas_semanais = 24
 arquivo_dados = "banco de horas.txt"
 arquivo_semana = "semanas.txt"
 arquivo_horas = "horas diarias.txt"
@@ -32,7 +31,12 @@ while True:
         horas_diarias(arquivo_horas)
 
     if x == 5:
-        convertendo_horas(input("digite a quantidade de horas: "))
+        print("Usar horas diarias ? ")
+        op = str(input())
+        if op == "sim" or op == "s":
+            convertendo_horas(soma_diaria(arquivo_horas))
+        else:
+            convertendo_horas(input("digite a quantidade de horas: "))
 
     if x == 6:
         linhas()
@@ -42,6 +46,8 @@ while True:
         elif ver == 2:
             mostrar_semana(arquivo_semana)
             print(f"DEVENDO {devendo(arquivo_semana)} HORAS")
+        elif ver == 3:
+            break
 
     if x == 7:
         break

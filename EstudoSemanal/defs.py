@@ -1,3 +1,4 @@
+horas_semanais = 24
 def linhas():
     print("-=" * 25)
 
@@ -67,7 +68,7 @@ def registrar_semana(x):
             correto += 1
     pag.close()
     if correto == 7:
-        pag2 = open(f"{arquivo_semana}", "r+")
+        pag2 = open(f"{x}", "r+")
         z = pag2.readlines()
         contador = 0
         for c in z:
@@ -80,6 +81,15 @@ def registrar_semana(x):
         pag.close()
     else:
         print("Registrar todos os 7 dias da semana antes de finalizar")
+
+def soma_diaria(x):
+    pag = open(f"{x}", "r+")
+    b = pag.readlines()
+    soma = 0
+    for c in b:
+        soma += float(c)
+    pag.close()
+    return soma
 
 def horas_diarias(x):
     pag = open(f"{x}", "r+")
@@ -95,17 +105,17 @@ def horas_diarias(x):
     z = int(input("Digite a sua opção: "))
     if z == 1:
         linhas()
-        pag = open(f"{x}", "a")
+        pag = open(f"{x}", "w")
         horas = int(input("Digite a quantidade de horas: "))
         minutos = int(input("Digite a quantidade de minutos:"))
-        pag.write(f"{(horas * 60) + minutos}")
+        pag.write(f"{soma + ((horas * 60) + minutos)}")
         print("Adicionado com sucesso")
         linhas()
         pag.close()
     elif z == 2:
         certeza = str(input("Tem certeza? "))
         if certeza.lower().strip() == "sim" or certeza.lower() == "s":
-            pag = open("", "w")
+            pag = open(f"{x}", "w")
             pag.write("0")
             print("resetada com sucesso")
             linhas()
